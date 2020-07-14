@@ -1,0 +1,138 @@
+const GET_ORDER_CHECK_REQUEST = "GET_ORDER_CHECK_REQUEST"
+const GET_ORDER_CHECK_SUCCESS = "GET_ORDER_CHECK_SUCCESS"
+const SEARCH_ORDER_REQUEST = "SEARCH_ORDER_REQUEST"
+const PAGINATION_REQUEST = "PAGINATION_REQUEST"
+const CREATE_ORDER_REQUEST = "CREATE_ORDER_REQUEST"
+const CREATE_ORDER_SUCCESS = "CREATE_ORDER_SUCCESS"
+const GET_IMAGE_ORDER = "GET_IMAGE_ORDER"
+const GET_IMAGE_ORDER_SUCCESS = "GET_IMAGE_ORDER_SUCCESS"
+
+const UPDATE_ORDER = "UPDATE_ORDER"
+const UPDATE_ORDER_SUCCESS = "UPDATE_ORDER_SUCCESS"
+
+const CONFIRM_ORDER = "CONFIRM_ORDER"
+const CONFIRM_ORDER_SUCCESS = "CONFIRM_ORDER_SUCCESS"
+const ORDER_BEING_TRANSPORTED_STATUS_REQUEST = "ORDER_BEING_TRANSPORTED_STATUS_REQUEST"
+const ORDER_BEING_TRANSPORTED_STATUS_SUCCESS = "ORDER_BEING_TRANSPORTED_STATUS_SUCCESS"
+
+const CHECK_BARCODE_REQUEST = "CHECK_BARCODE_REQUEST"
+const CHECK_BARCODE_SUCCESS = "CHECK_BARCODE_SUCCESS"
+
+const IMPORT_WAYBILL_CODE_REQUEST = "IMPORT_WAYBILL_CODE_REQUEST"
+const IMPORT_WAYBILL_CODE_SUCCESS = "IMPORT_WAYBILL_CODE_SUCCESS"
+const IMPORT_WAYBILL_CODE_FAIL = "IMPORT_WAYBILL_CODE_FAIL"
+
+
+const FIND_WAYBILL_CODE_REQUEST = "FIND_WAYBILL_CODE_REQUEST"
+const FIND_WAYBILL_CODE_SUCCESS = "FIND_WAYBILL_CODE_SUCCESS"
+
+const getOrderBeingTransportedStatus = () => {
+  return {
+    type: ORDER_BEING_TRANSPORTED_STATUS_REQUEST
+  }
+}
+
+const confirm = (data) => {
+  return {
+    type: CONFIRM_ORDER,
+    data
+  }
+}
+
+const getOrderCheck = (data) => {
+  return {
+    type: GET_ORDER_CHECK_REQUEST,
+    data,
+  }
+}
+
+const search = (data) => {
+  return {
+    type: SEARCH_ORDER_REQUEST,
+    data
+  }
+}
+
+const pagination = (data) => {
+  return {
+    type: PAGINATION_REQUEST,
+    data
+  }
+}
+
+const create = (data) => {
+  return {
+    type: CREATE_ORDER_REQUEST,
+    data
+  }
+}
+
+const getImageOrder = (orderId) => {
+  return {
+    type: GET_IMAGE_ORDER,
+    orderId
+  }
+}
+
+const updateOrder = (data) => {
+  return {
+    type: UPDATE_ORDER,
+    data
+  }
+}
+
+const checkBarcode = (data) => {
+  return {
+    type: CHECK_BARCODE_REQUEST,
+    data
+  }
+}
+
+
+const importWaybillCode = (data) => {
+  return {
+    type: IMPORT_WAYBILL_CODE_REQUEST,
+    data,
+  }
+}
+
+const findWaybillCode = (data) => {
+  return {
+    type: FIND_WAYBILL_CODE_REQUEST,
+    data
+  }
+}
+export default {
+  GET_ORDER_CHECK_REQUEST,
+  GET_ORDER_CHECK_SUCCESS,
+  getOrderCheck,
+  SEARCH_ORDER_REQUEST,
+  search,
+  PAGINATION_REQUEST,
+  pagination,
+  CREATE_ORDER_REQUEST,
+  CREATE_ORDER_SUCCESS,
+  create,
+  GET_IMAGE_ORDER,
+  GET_IMAGE_ORDER_SUCCESS,
+  getImageOrder,
+  UPDATE_ORDER,
+  UPDATE_ORDER_SUCCESS,
+  updateOrder,
+  CONFIRM_ORDER,
+  CONFIRM_ORDER_SUCCESS,
+  confirm,
+  ORDER_BEING_TRANSPORTED_STATUS_REQUEST,
+  ORDER_BEING_TRANSPORTED_STATUS_SUCCESS,
+  getOrderBeingTransportedStatus,
+  CHECK_BARCODE_REQUEST,
+  CHECK_BARCODE_SUCCESS,
+  checkBarcode,
+  IMPORT_WAYBILL_CODE_REQUEST,
+  IMPORT_WAYBILL_CODE_SUCCESS,
+  IMPORT_WAYBILL_CODE_FAIL,
+  importWaybillCode,
+  FIND_WAYBILL_CODE_REQUEST,
+  FIND_WAYBILL_CODE_SUCCESS,
+  findWaybillCode
+}

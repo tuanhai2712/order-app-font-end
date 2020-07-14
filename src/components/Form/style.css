@@ -1,0 +1,20 @@
+.err-mess {
+  text-align: left;
+  font-size: 10px;
+  color: red;
+  font-weight: 400;
+  margin-left: 19px;
+  margin-bottom: 5px;
+}
+
+.form {
+  position: relative;
+}
+
+.form .btn {
+  margin: 0px;
+}
+
+.register-button {
+  background-color: unset;
+}

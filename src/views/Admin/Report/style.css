@@ -1,0 +1,17 @@
+.date-time-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.date-time-container .rdt {
+    margin: 0px 10px;
+    width: 60px;
+}
+.revenue-container {
+    margin: 0px 15px;
+}
+
+.debt-container {
+    /* margin: 0px 15px; */
+}

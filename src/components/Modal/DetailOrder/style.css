@@ -1,0 +1,43 @@
+.form-container {
+    width: 100%;
+}
+
+.form-total {
+    display: flex;
+}
+
+.title-form-total {
+    font-weight: 700;
+    flex: 1
+}
+
+.form-total-container {
+    margin-top: 10px;
+}
+
+.text-form-total {
+    color: red;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.group-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.field-label {
+    min-width: fit-content;
+    margin-right: 10px;
+    flex: 1
+}
+
+.field-input {
+    flex: 1
+}
+.note-field {
+    border: 1px solid #E3E3E3 !important;
+    border-radius: 8px !important;
+    height: 1000px !important;
+}

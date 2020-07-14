@@ -1,0 +1,8 @@
+.alert-container .close {
+  top: 12px;
+}
+
+.success-alert {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}

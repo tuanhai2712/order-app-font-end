@@ -1,0 +1,25 @@
+.info-dept-container {
+    display: flex;
+    margin: 10px 24px;
+}
+.info-dept-container .modal-content {
+    padding-top: 0px;
+}
+.info-customer-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1
+}
+.info-customer-container > span {
+    padding: 5px;
+    border: 1px solid #000;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+@media (min-width: 576px) {
+    .modal-dept-container {
+        max-width: 1000px;
+        margin: 1.75rem auto;
+    }
+}

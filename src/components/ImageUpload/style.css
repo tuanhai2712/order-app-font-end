@@ -1,0 +1,16 @@
+.main-page-icon-photo {
+  right: 15px;
+  position: absolute;
+  bottom: -4px;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.main-page-icon-photo:hover {
+  background-color: unset;
+  box-shadow: none;
+}
+
+.page-header-input-file {
+  display: none;
+}

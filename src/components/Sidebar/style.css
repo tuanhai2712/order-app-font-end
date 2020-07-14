@@ -1,0 +1,29 @@
+.exchange-rate {
+  display: flex;
+  flex-direction: row;
+  color: yellow;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.exchange-rate > span {
+  font-weight: bold;
+}
+
+.exchange-rate > input {
+  font-weight: bold;
+  margin-left: 5px;
+  width: 100px;
+  border: none;
+  border-radius: 15px;
+  padding: 5px;
+}
+.exchange-rate .MuiSvgIcon-root {
+  color: gray;
+  margin-left: 5px;
+  font-size: 1.2rem;
+}
+
+.exchange-rate .MuiSvgIcon-root:hover {
+  cursor: pointer;
+}
