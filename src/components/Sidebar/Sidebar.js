@@ -58,7 +58,7 @@ export default function Sidebar(props) {
         const whiteFontClasses = classNames({
           [" " + classes.whiteFont]: activeRoute(prop.layout + prop.path)
         });
-        if (user.role === role.user_role && prop.role === role.admin_role) {
+        if (user.role == role.user_role && prop.role == role.admin_role) {
           return
         }
         if (prop.sub) {

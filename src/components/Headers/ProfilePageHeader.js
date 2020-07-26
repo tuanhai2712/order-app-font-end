@@ -36,7 +36,7 @@ function ProfilePageHeader() {
         ></div>
         <Container className="profile-page-header-image">
           <h3 className="title">{user.name}</h3>
-          <p className="category">{user.role === role.admin_role ? "Quản trị viên" : "Thành viên"}</p>
+          <p className="category">{user.role == role.admin_role ? "Quản trị viên" : "Thành viên"}</p>
           <div className="content">
             <div className="social-description">
               <h2>{overview.totalOrder}</h2>

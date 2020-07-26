@@ -60,7 +60,7 @@ function CreateOrderModal(props) {
 
   const create = () => {
     const error = validateForm(data)
-    if (user.role === role.admin_role) {
+    if (user.role == role.admin_role) {
       if (!data.customer_id) {
           error.customer_id = "Lựa chọn khách hàng"
       }
@@ -118,7 +118,7 @@ function CreateOrderModal(props) {
                       <Label>Ghi chú</Label>
                       <Input type="textarea" name="note" className="note-field" placeholder="Nhập ghi chú" onChange={e => handleChange(e)}/>
                     </FormGroup>
-                    {user.role === role.admin_role &&
+                    {user.role == role.admin_role &&
                       <>
                         <FilterInput selectCustomer={customerId => selectCustomer(customerId)}/>
                         {err && err.customer_id && <p className="err-mess mt-10">{err.customer_id}</p>}
