@@ -126,7 +126,7 @@ function DetailOrderModal(props) {
         </Button>
       )
     }
-    if (user.role != role.admin_role && orderDetail.tinh_trang < 1) {
+    if (user.role !== role.admin_role && orderDetail.tinh_trang < 1) {
       return (
         <Button color="primary" type="button" onClick={() => update()}>
           Cập nhập
@@ -252,7 +252,7 @@ function DetailOrderModal(props) {
                             name="ma_van_don"
                             value={orderDetail.ma_van_don || ""}
                             onChange={e => handleChange(e)}
-                            disabled={(user.role != role.admin_role) || orderDetail.tinh_trang > 1}
+                            disabled={(user.role !== role.admin_role) || orderDetail.tinh_trang > 1}
                           />
                         </FormGroup>
                         <FormGroup className="group-field">
@@ -343,7 +343,7 @@ function DetailOrderModal(props) {
                             placeholder="Giá"
                             value={orderDetail.gia_thuc_te}
                             onChange={e => handleChange(e)}
-                            disabled={(user.role != role.admin_role) || orderDetail.tinh_trang > 1}
+                            disabled={(user.role !== role.admin_role) || orderDetail.tinh_trang > 1}
                           />
                         </FormGroup>
                         <FormGroup className="group-field">
@@ -364,7 +364,7 @@ function DetailOrderModal(props) {
                             placeholder="Phí vận chuyển - TQ"
                             value={orderDetail.phi_ship_tq}
                             onChange={e => handleChange(e)}
-                            disabled={(user.role != role.admin_role) || orderDetail.tinh_trang > 1}
+                            disabled={(user.role !== role.admin_role) || orderDetail.tinh_trang > 1}
                           />
                         </FormGroup>
                         <FormGroup className="group-field">
@@ -376,7 +376,7 @@ function DetailOrderModal(props) {
                             placeholder="Phí vận chuyển - VN"
                             value={orderDetail.phi_ship_vn}
                             onChange={e => handleChange(e)}
-                            disabled={(user.role != role.admin_role) || orderDetail.tinh_trang > 1}
+                            disabled={(user.role !== role.admin_role) || orderDetail.tinh_trang > 1}
                           />
                         </FormGroup>
                         <FormGroup className="group-field">
@@ -399,7 +399,7 @@ function DetailOrderModal(props) {
                             placeholder="Đã thanh toán"
                             value={orderDetail.dat_coc}
                             onChange={e => handleChange(e)}
-                            disabled={(user.role != role.admin_role) || orderDetail.tinh_trang > 1}
+                            disabled={(user.role !== role.admin_role) || orderDetail.tinh_trang > 1}
                           />
                         </FormGroup>
                       </Form>

@@ -5,14 +5,12 @@ import api from "constants/api";
 const user = JSON.parse(localStorage.getItem("user"))
 
 function* doGetOrderCheck(data) {
-  let error = null;
   let response = null;
   yield postJWT('get-order-check', data.data)
   .then((res) => {
     response = res
   })
   .catch((err) => {
-    error = err
   })
   if (response.status === api.HTTP_OK) {
     yield put({type: OrderActions.GET_ORDER_CHECK_SUCCESS, data: response.data})
@@ -28,7 +26,6 @@ export function* getOrderCheck() {
 }
 
 function* doCreateOrder(data) {
-  let error = null;
   let response = null;
   let formData = new FormData()
   const { customer_id, link, files, user_id, role, ty_gia, ten_san_pham, note } = data.data
@@ -49,7 +46,6 @@ function* doCreateOrder(data) {
     response = res
   })
   .catch((err) => {
-    error = err
   })
   if (response.status === api.HTTP_OK) {
     yield put({type: OrderActions.CREATE_ORDER_SUCCESS, data: response.data})
@@ -76,14 +72,12 @@ export function* createOrder() {
 }
 
 function* doGetImageOrder(data) {
-  let error = null;
   let response = null;
   yield postJWT('get-image-order', {order_id: data.orderId})
   .then((res) => {
     response = res
   })
   .catch((err) => {
-    error = err
   })
   if (response.status === api.HTTP_OK) {
     yield put({type: OrderActions.GET_IMAGE_ORDER_SUCCESS, data: response.data})
@@ -96,14 +90,12 @@ export function* getImageOrder() {
   yield takeLatest(OrderActions.GET_IMAGE_ORDER, doGetImageOrder);
 }
 function* doUpdateOrder(data) {
-  let error = null;
   let response = null;
   yield postJWT('update-order', data.data)
   .then((res) => {
     response = res
   })
   .catch((err) => {
-    error = err
   })
   if (response.status === api.HTTP_OK) {
     yield put({type: OrderActions.UPDATE_ORDER_SUCCESS, data: response.data})
@@ -118,14 +110,12 @@ export function* updateOrder() {
 
 
 function* doConfirmOrder(data) {
-  let error = null;
   let response = null;
   yield postJWT('confirm-order', data.data)
   .then((res) => {
     response = res
   })
   .catch((err) => {
-    error = err
   })
   if (response.status === api.HTTP_OK) {
     yield put({type: OrderActions.CONFIRM_ORDER_SUCCESS, data: response.data})
@@ -139,14 +129,12 @@ export function* confirmOrder() {
 }
 
 function* doGetOrderBeingTransportedStatus() {
-  let error = null;
   let response = null;
   yield getJWT('get-order-being-transported-status')
   .then((res) => {
     response = res
   })
   .catch((err) => {
-    error = err
   })
   if (response.status === api.HTTP_OK) {
     yield put({type: OrderActions.ORDER_BEING_TRANSPORTED_STATUS_SUCCESS, data: response.data})
@@ -160,7 +148,6 @@ export function* getOrderBeingTransportedStatus() {
 }
 
 function * doCheckBarcode(data) {
-  let error = null;
   let response = null;
 try {
     yield postJWT('check-barcode', data.data)
@@ -168,7 +155,7 @@ try {
       response = res
     })
     .catch((err) => {
-      error = err
+
     })
     if (response.status === api.HTTP_OK) {
       yield put({type: OrderActions.CHECK_BARCODE_SUCCESS, data: response.data})
@@ -184,7 +171,6 @@ export function* checkBarcode() {
 }
 
 function* doImportWaybillCode(data) {
-  let error = null;
   let response = null;
   let formData = new FormData()
   const { file, type } = data.data
@@ -196,7 +182,7 @@ function* doImportWaybillCode(data) {
       response = res
     })
     .catch((err) => {
-      error = err
+
     })
     if (response.data.code === api.HTTP_OK) {
       yield put({type: OrderActions.IMPORT_WAYBILL_CODE_SUCCESS, data: response.data})
@@ -214,7 +200,6 @@ export function* importWaybillCode() {
   yield takeLatest(OrderActions.IMPORT_WAYBILL_CODE_REQUEST, doImportWaybillCode);
 }
 function* doFindWaybillCode(data) {
-  let error = null;
   let response = null;
   try {
     yield postJWT('find-waybill-code', data.data)
@@ -222,7 +207,7 @@ function* doFindWaybillCode(data) {
       response = res
     })
     .catch((err) => {
-      error = err
+
     })
     if (response.status === api.HTTP_OK) {
       yield put({type: OrderActions.FIND_WAYBILL_CODE_SUCCESS, data: response.data})
