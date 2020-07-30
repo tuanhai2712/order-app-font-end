@@ -122,3 +122,13 @@
     border: 1px solid;
     padding: 10px
 }
+.radio-button-container {
+    display: flex;
+    margin: 20px 0px;
+}
+.radio-button {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    margin-left: 10px;
+}

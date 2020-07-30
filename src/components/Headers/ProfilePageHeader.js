@@ -3,11 +3,14 @@ import React from "react";
 import { Container } from "reactstrap";
 // constants
 import role from "constants/role"
+import api from "constants/api"
 
 function ProfilePageHeader() {
   let pageHeader = React.createRef();
   const user = JSON.parse(localStorage.getItem("user"))
   const overview = JSON.parse(localStorage.getItem("overview"))
+  const settings = JSON.parse(localStorage.getItem("settings"))
+  const img = settings && settings.header_img ? `${api.BASE_URL}${settings.header_img}` : require("assets/img/defaut.png")
   React.useEffect(() => {
     if (window.innerWidth > 991) {
       const updateScroll = () => {
@@ -30,13 +33,13 @@ function ProfilePageHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/bg5.jpg") + ")"
+            backgroundImage: "url(" + img + ")"
           }}
           ref={pageHeader}
         ></div>
         <Container className="profile-page-header-image">
           <h3 className="title">{user.name}</h3>
-          <p className="category">{user.role == role.admin_role ? "Quản trị viên" : "Thành viên"}</p>
+          <p className="category">{user.role === role.admin_role ? "Quản trị viên" : "Thành viên"}</p>
           <div className="content">
             <div className="social-description">
               <h2>{overview.totalOrder}</h2>

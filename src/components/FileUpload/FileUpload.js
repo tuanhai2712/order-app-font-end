@@ -10,7 +10,7 @@ import regex from "constants/regex"
 function FileUpload(props) {
   const [fileName, setFileName] = React.useState("");
   const onDrop = (file) => {
-    if (file) {
+    if (file.length) {
       props.getFile(file[0])
       if (regex.fileImport.test(file[0].name)) {
         setFileName(file[0].name)
@@ -27,6 +27,7 @@ function FileUpload(props) {
         onChange={onDrop}
         className="file-upload-container"
         singleImage={true}
+        imgExtension={[".xls", ".xlsx"]}
       />
     </FormGroup>
   );

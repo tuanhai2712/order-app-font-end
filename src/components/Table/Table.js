@@ -56,7 +56,7 @@ export default function CustomTable(props) {
     }))
   }
   const renderConfirmOrder = (status, orderId) => {
-    if (user.role == role.admin_role && status <= 5) {
+    if (user.role === role.admin_role && status <= 5) {
       return (
         <Tooltip
           id="tooltip-top"

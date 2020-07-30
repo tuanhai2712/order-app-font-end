@@ -32,7 +32,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { SettingActions } from "actions"
 import "./style.css"
 import Loading from "components/Loading/Loading"
-
+import api from "constants/api"
 const useStyles = makeStyles(styles);
 
 export default function Sidebar(props) {
@@ -58,7 +58,7 @@ export default function Sidebar(props) {
         const whiteFontClasses = classNames({
           [" " + classes.whiteFont]: activeRoute(prop.layout + prop.path)
         });
-        if (user.role == role.user_role && prop.role == role.admin_role) {
+        if (user.role === role.user_role && prop.role === role.admin_role) {
           return
         }
         if (prop.sub) {
@@ -188,7 +188,7 @@ export default function Sidebar(props) {
   let brand = (
     <div className={classes.logo}>
       <a
-        href="http://localhost:3000/"
+        href={api.MAIN_URL}
         className={classNames(classes.logoLink)}
       >
         <div className={classes.logoImage}>

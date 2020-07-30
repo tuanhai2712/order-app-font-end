@@ -187,8 +187,9 @@ function* doImportWaybillCode(data) {
   let error = null;
   let response = null;
   let formData = new FormData()
-  const file = data.data
+  const { file, type } = data.data
   formData.append('file', file)
+  formData.append('type', parseInt(type))
   try {
     yield postJWT('import', formData)
     .then((res) => {

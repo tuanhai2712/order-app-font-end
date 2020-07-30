@@ -12,8 +12,10 @@ import {
 import MainNavbar from "components/Navbars/MainNavbar.js";
 import TransparentFooter from "components/Footers/TransparentFooter.js";
 import RegisterForm from "components/Form/RegisterForm.js";
-
+import api from "constants/api"
 function SignUpPage() {
+  const settings = JSON.parse(localStorage.getItem("settings"))
+  const img = settings && settings.header_img ? `${api.BASE_URL}${settings.header_img}` : require("assets/img/defaut.png")
   React.useEffect(() => {
     document.body.classList.add("login-page");
     document.body.classList.add("sidebar-collapse");
@@ -32,7 +34,7 @@ function SignUpPage() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login.jpg") + ")"
+            backgroundImage: "url(" + img + ")"
           }}
         ></div>
         <div className="content">

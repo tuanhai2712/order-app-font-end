@@ -3,7 +3,7 @@ const statistic = [
   "Đang đặt hàng",
   "Đã đặt hàng",
   "Chờ giao hàng",
-  "Đang vận chuyển",
+  "Đến kho TQ",
   "Đến kho VN",
   "Đã trả hàng",
   "Đã hủy",

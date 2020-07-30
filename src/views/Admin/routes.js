@@ -7,7 +7,8 @@ import PeopleIcon from '@material-ui/icons/People';
 import Overview from "views/Admin/Overview/Overview.js";
 import OrderCheck from "views/Admin/Order/OrderCheck.js";
 import Users from "views/Admin/Account/Users.js";
-import BarCode from "views/Admin/CheckBarCode/BarCode.js";
+import BarCode from "views/Admin/Check/BarCode.js";
+import ImportListConsignment from "views/Admin/Check/ImportListConsignment.js";
 import Revenue from "./Report/Revenue";
 import Debt from "./Report/Debt";
 import role from "constants/role";
@@ -31,9 +32,20 @@ const dashboardRoutes = [
     path: "/nhap-don",
     name: "Nhập đơn",
     icon: CropFree,
-    component: BarCode,
     layout: "/admin",
-    role: role.admin_role
+    role: role.admin_role,
+    sub: [
+      // {
+      //   subPath: "/check-ma-van-don",
+      //   name: "Check mã vận đơn",
+      //   component: BarCode
+      // },
+      {
+        subPath: "/nhap-danh-sach-ma-van-don",
+        name: "Nhập danh sách",
+        component: ImportListConsignment
+      },
+    ]
   },
   {
     path: "/tai-khoan",

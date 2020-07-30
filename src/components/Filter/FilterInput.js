@@ -46,7 +46,7 @@ function FilterInput(props) {
             <button className="button-select-result" key={result.id} onClick={() => chooseCustomer(result)}>
               <span>{result.name} - </span>
               <span>{result.address} - </span>
-              <span>{result.phone_number}</span>
+              <span>{`${result.phone_number}`}</span>
               <Divider />
             </button>
           )))

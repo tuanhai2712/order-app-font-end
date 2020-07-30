@@ -2,13 +2,7 @@ import React from "react";
 
 // reactstrap components
 import {
-  NavItem,
-  NavLink,
-  Nav,
-  TabContent,
-  TabPane,
   Container,
-  Row,
   Col,
   Button,
   CardBody,
@@ -32,7 +26,6 @@ import { isEmpty } from "lodash"
 
 function UserProfile() {
   const dispatch = useDispatch()
-  const [firstFocus, setFirstFocus] = React.useState(false);
   const [lastFocus, setLastFocus] = React.useState(false);
   const loading = useSelector(state => state.loading);
   const resetPassword = useSelector(state => state.resetPassword);

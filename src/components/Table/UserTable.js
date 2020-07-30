@@ -58,7 +58,7 @@ export default function UserTable(props) {
                   {prop.email}
                 </TableCell>
                 <TableCell className={classes.tableCell}>
-                  {prop.phone_number}
+                  {`${prop.phone_number}`}
                 </TableCell>
                 <TableCell className={classes.tableCell}>
                   {prop.address}

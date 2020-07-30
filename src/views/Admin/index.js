@@ -8,8 +8,8 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "./routes.js";
 import styles from "assets/jss/material-dashboard-react/layouts/adminStyle.js";
-import bgImage from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
+import api from "constants/api"
 
 const switchRoutes = (
   <Switch>
@@ -46,8 +46,8 @@ export default function Admin({ ...rest }) {
   // styles
   const classes = useStyles();
   // states and functions
-  const [image, setImage] = React.useState(bgImage);
-  const [color, setColor] = React.useState("blue");
+  const settings = JSON.parse(localStorage.getItem("settings"))
+  const image = settings && settings.header_img ? `${api.BASE_URL}${settings.header_img}` : require("assets/img/defaut.png")
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -57,12 +57,12 @@ export default function Admin({ ...rest }) {
     <div className={classes.wrapper}>
       <Sidebar
         routes={routes}
-        logoText={"CD LOGICSTIC"}
+        logoText={"Trang chủ"}
         logo={logo}
         image={image}
         handleDrawerToggle={handleDrawerToggle}
         open={mobileOpen}
-        color={color}
+        color={"blue"}
         {...rest}
       />
       <div className={classes.mainPanel}>

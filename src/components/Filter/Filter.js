@@ -136,7 +136,7 @@ export default function Filter() {
                 ></Input>
               </FormGroup>
             </Grid>
-            {user.role == role.admin_role &&
+            {user.role === role.admin_role &&
               <Grid xs={12} lg={3} sm={6} md={6} item className="pr-10">
                 <FilterInput selectCustomer={customerId => selectCustomer(customerId)}/>
               </Grid>

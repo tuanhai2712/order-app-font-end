@@ -35,7 +35,7 @@ function SingleUpload(props) {
   }
   return (
     <>
-      {user && user.role == role.admin_role &&
+      {user && user.role === role.admin_role &&
         <>
           <input
             ref={inputFile}

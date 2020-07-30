@@ -2,12 +2,15 @@
 import React from "react";
 import { Alert } from 'reactstrap';
 import "./style.css"
+import { SystemActions } from "actions"
+
 function ErrorSystem() {
   const [visible, setVisible] = React.useState(true);
   const onDismiss = () => setVisible(false);
   React.useEffect(() => {
     setTimeout(() => {
       setVisible(false)
+      SystemActions.clear()
     }, 5000)
   }, [])
   return (

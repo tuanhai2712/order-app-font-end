@@ -12,7 +12,6 @@ import Error from "components/Alert/Error"
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import ImportWaybillCode from "components/Modal/Import/ImportWaybillCode";
 // marterial icon
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 // react bar code
@@ -140,7 +139,6 @@ export default function BarCode() {
           {err && err.ma_van_don ? <Error mess={err.ma_van_don} visible={err && err.ma_van_don}/> : null}
           {err && err.khoi_luong ? <Error mess={err.khoi_luong} visible={err && err.khoi_luong}/> : null}
           {err && err.not_found ? <Error mess={err.not_found} visible={err && err.not_found}/> : null}
-          <ImportWaybillCode/>
           <Card>
             <CardHeader color="primary">
               <h4 className="card-title-white">Hàng đặt</h4>
