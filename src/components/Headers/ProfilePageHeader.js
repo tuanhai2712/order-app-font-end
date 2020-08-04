@@ -1,26 +1,29 @@
-import React from "react";
+import React from 'react';
 // reactstrap components
-import { Container } from "reactstrap";
+import { Container } from 'reactstrap';
 // constants
-import role from "constants/role"
-import api from "constants/api"
+import role from 'constants/role';
+import api from 'constants/api';
 
 function ProfilePageHeader() {
   let pageHeader = React.createRef();
-  const user = JSON.parse(localStorage.getItem("user"))
-  const overview = JSON.parse(localStorage.getItem("overview"))
-  const settings = JSON.parse(localStorage.getItem("settings"))
-  const img = settings && settings.header_img ? `${api.BASE_URL}${settings.header_img}` : require("assets/img/defaut.png")
+  const user = JSON.parse(localStorage.getItem('user'));
+  const overview = JSON.parse(localStorage.getItem('overview'));
+  const settings = JSON.parse(localStorage.getItem('settings'));
+  const img =
+    settings && settings.header_img
+      ? `${api.BASE_URL}${settings.header_img}`
+      : require('assets/img/default.png');
   React.useEffect(() => {
     if (window.innerWidth > 991) {
       const updateScroll = () => {
         let windowScrollTop = window.pageYOffset / 3;
         pageHeader.current.style.transform =
-          "translate3d(0," + windowScrollTop + "px,0)";
+          'translate3d(0,' + windowScrollTop + 'px,0)';
       };
-      window.addEventListener("scroll", updateScroll);
+      window.addEventListener('scroll', updateScroll);
       return function cleanup() {
-        window.removeEventListener("scroll", updateScroll);
+        window.removeEventListener('scroll', updateScroll);
       };
     }
   });
@@ -33,13 +36,15 @@ function ProfilePageHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + img + ")"
+            backgroundImage: 'url(' + img + ')',
           }}
           ref={pageHeader}
         ></div>
         <Container className="profile-page-header-image">
           <h3 className="title">{user.name}</h3>
-          <p className="category">{user.role === role.admin_role ? "Quản trị viên" : "Thành viên"}</p>
+          <p className="category">
+            {user.role === role.admin_role ? 'Quản trị viên' : 'Thành viên'}
+          </p>
           <div className="content">
             <div className="social-description">
               <h2>{overview.totalOrder}</h2>

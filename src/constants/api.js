@@ -1,6 +1,7 @@
 export default {
   // BASE_API: 'http://localhost:8000/api/',
   // BASE_URL: 'http://localhost:8000',
+  // MAIN_URL: 'http://localhost:3000',
   BASE_API: 'https://vanchuyen3mien.store/api/',
   BASE_URL: 'https://vanchuyen3mien.store',
   MAIN_URL: 'https://vanchuyen3mien.com',

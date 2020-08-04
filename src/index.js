@@ -15,55 +15,74 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 // styles for this kit
-import "assets/css/bootstrap.min.css";
-import "assets/scss/now-ui-kit.scss";
-import "assets/demo/demo.css";
-import "assets/demo/nucleo-icons-page-styles.css";
+import 'assets/css/bootstrap.min.css';
+import 'assets/scss/now-ui-kit.scss';
+import 'assets/demo/demo.css';
+import 'assets/demo/nucleo-icons-page-styles.css';
 //styles by tuanhai
-import "assets/css/style.css";
+import 'assets/css/style.css';
 // pages for this kit
-import LoginPage from "views/Home/LoginPage.js";
-import SignUpPage from "views/Home/SignUpPage.js";
-import HomePage from "views/Home/HomePage/HomePage.js";
-import UserProfile from "views/Home/UserProfile.js";
-import FindConsignment from "views/Home/FindConsignment.js";
-import Admin from "views/Admin";
+import LoginPage from 'views/Home/LoginPage.js';
+import SignUpPage from 'views/Home/SignUpPage.js';
+import HomePage from 'views/Home/HomePage.js';
+import UserProfile from 'views/Home/UserProfile.js';
+import FindConsignment from 'views/Home/FindConsignment.js';
+import PaymentInfoPage from 'views/Home/PaymentInfoPage.js';
+import AboutUs from 'views/Home/AboutUs.js';
+import Admin from 'views/Admin';
 
 //Redux
-import { createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
-import allReducer from "reducers"
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import allReducer from 'reducers';
 //Saga
-import createSagaMiddleware from "redux-saga"
-import rootSaga from "sagas/rootSaga";
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from 'sagas/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(allReducer, applyMiddleware(sagaMiddleware));
-const token = localStorage.getItem("token")
+const token = localStorage.getItem('token');
 sagaMiddleware.run(rootSaga);
 ReactDOM.render(
-    <BrowserRouter>
-      <Provider store={store}>
+  <BrowserRouter>
+    <Provider store={store}>
+      <Switch>
         <Switch>
-          <Switch>
-            <Route exact path="/" render={props => <HomePage {...props} />} />
-            <Route path="/dang-nhap" render={props => <LoginPage {...props} />} />
-            <Route path="/dang-ky" render={props => <SignUpPage {...props} />} />
-            <Route path="/ho-so" render={props => <UserProfile {...props} />} />
-            <Route path="/tra-cuu" render={props => <FindConsignment {...props} />} />
-            {token ? 
-              <Route path="/admin" render={props => <Admin {...props} />} />
-            :
-              <Redirect to="/" />
-            }
-          </Switch>
+          <Route exact path="/" render={(props) => <HomePage {...props} />} />
+          <Route
+            path="/dang-nhap"
+            render={(props) => <LoginPage {...props} />}
+          />
+          <Route
+            path="/dang-ky"
+            render={(props) => <SignUpPage {...props} />}
+          />
+          <Route path="/ho-so" render={(props) => <UserProfile {...props} />} />
+          <Route
+            path="/tra-cuu"
+            render={(props) => <FindConsignment {...props} />}
+          />
+          <Route
+            path="/bieu-phi-thanh-toan"
+            render={(props) => <PaymentInfoPage {...props} />}
+          />
+          <Route
+            path="/ve-chung-toi"
+            render={(props) => <AboutUs {...props} />}
+          />
+          {token ? (
+            <Route path="/admin" render={(props) => <Admin {...props} />} />
+          ) : (
+            <Redirect to="/" />
+          )}
         </Switch>
-      </Provider>
-    </BrowserRouter>,
-  document.getElementById("root")
+      </Switch>
+    </Provider>
+  </BrowserRouter>,
+  document.getElementById('root')
 );
