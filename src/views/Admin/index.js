@@ -62,7 +62,7 @@ export default function Admin({ ...rest }) {
         routes={routes}
         logoText={'Trang chủ'}
         logo={logo}
-        image={image}
+        image={require('assets/img/banner.jpg')}
         handleDrawerToggle={handleDrawerToggle}
         open={mobileOpen}
         color={'blue'}

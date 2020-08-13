@@ -100,11 +100,11 @@ function PaymentInfoPage() {
                   </p>
 
                   <p>
-                    - Thời gian vận chuyển hàng Đi trong nhanh từ kho TQ về kho
-                    VN là 1-2 ngày (hạn chế hàng cồng kềnh).
+                    - Thời gian vận chuyển hàng Đi nhanh từ kho TQ về kho VN là
+                    1-3 ngày (hạn chế hàng cồng kềnh).
                   </p>
                   <p>
-                    - Thời gian vận chuyển hàng Đi thường là 4-6 ngày (hạn chế
+                    - Thời gian vận chuyển hàng Đi thường là 7-10 ngày (hạn chế
                     hàng fake, mỹ phẩm, dung dịch dạng lỏng, bột, nước đồ điện
                     tử…).
                   </p>

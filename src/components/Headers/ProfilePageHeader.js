@@ -3,17 +3,11 @@ import React from 'react';
 import { Container } from 'reactstrap';
 // constants
 import role from 'constants/role';
-import api from 'constants/api';
 
 function ProfilePageHeader() {
   let pageHeader = React.createRef();
   const user = JSON.parse(localStorage.getItem('user'));
   const overview = JSON.parse(localStorage.getItem('overview'));
-  const settings = JSON.parse(localStorage.getItem('settings'));
-  const img =
-    settings && settings.header_img
-      ? `${api.BASE_URL}${settings.header_img}`
-      : require('assets/img/default.png');
   React.useEffect(() => {
     if (window.innerWidth > 991) {
       const updateScroll = () => {
@@ -36,7 +30,7 @@ function ProfilePageHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: 'url(' + img + ')',
+            backgroundImage: 'url(' + require('assets/img/banner.jpg') + ')',
           }}
           ref={pageHeader}
         ></div>

@@ -31,6 +31,7 @@ function CreateOrderModal(props) {
   const dispatch = useDispatch();
   const settings = JSON.parse(localStorage.getItem('settings'));
   const [open, setOpen] = React.useState(false);
+  const [fast, setFast] = React.useState(0);
   const [err, setErr] = React.useState({});
   const createOrderResult = useSelector((state) => state.createOrderResult);
   const loading = useSelector((state) => state.loading);
@@ -43,6 +44,7 @@ function CreateOrderModal(props) {
     role: user.role,
     note: '',
     ten_san_pham: '',
+    chuyen_nhanh: 0,
   });
   const handleOpen = (status) => {
     data.customer_id = null;
@@ -65,6 +67,7 @@ function CreateOrderModal(props) {
       }
     }
     data.ty_gia = settings.exchange_rate;
+    data.chuyen_nhanh = fast;
     if (isEmpty(error)) {
       dispatch(OrderActions.create(data));
     }
@@ -150,6 +153,24 @@ function CreateOrderModal(props) {
                       )}
                     </>
                   )}
+                  <FormGroup className="check-fast">
+                    <Input
+                      type="radio"
+                      name="radio1"
+                      checked={!fast}
+                      onChange={() => setFast(0)}
+                    />{' '}
+                    Chuyển nhanh (1-3 ngày)
+                  </FormGroup>
+                  <FormGroup className="check-fast">
+                    <Input
+                      type="radio"
+                      name="radio1"
+                      checked={fast}
+                      onChange={() => setFast(1)}
+                    />{' '}
+                    Chuyển chậm (7-10 ngày)
+                  </FormGroup>
                   <MultipleUpload
                     getPictureFiles={(files) => getPictureFiles(files)}
                     pictureFiles={data.files}

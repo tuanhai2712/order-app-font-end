@@ -10,11 +10,12 @@ import FilterResults from 'react-filter-search';
 function FilterInput(props) {
   const [value, setValue] = React.useState('');
   const customers = JSON.parse(localStorage.getItem('customers'));
-
+  console.log(customers);
   React.useEffect(() => {
     const { selected, customerId } = props;
     if (selected && customerId) {
       const find = customers.find((i, k) => i.id === parseInt(customerId));
+      console.log(find);
       setValue(`${find.name} - ${find.address} - ${find.phone_number}`);
     }
   }, []);

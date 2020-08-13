@@ -31,7 +31,7 @@ function SignUpPage() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: 'url(' + img + ')',
+            backgroundImage: 'url(' + require('assets/img/banner.jpg') + ')',
           }}
         ></div>
         <div className="content">

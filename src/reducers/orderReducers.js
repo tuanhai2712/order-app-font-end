@@ -78,6 +78,7 @@ const imageOrders = (data = [], action) => {
 const createOrderResult = (status = false, action) => {
   switch (action.type) {
     case OrderActions.CREATE_ORDER_SUCCESS:
+      window.location.href = '/admin/don-hang';
       return true;
     case SystemActions.CLEAR:
       return false;
