@@ -10,6 +10,7 @@ if (token) {
 }
 const filterConditions = (
   conditions = {
+    order_id: null,
     user_id: userId,
     tinh_trang: 8,
     role,

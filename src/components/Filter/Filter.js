@@ -70,7 +70,7 @@ export default function Filter() {
   const handleChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
-    setConditions({ ...conditions, [name]: value });
+    setConditions({ ...conditions, [name]: parseInt(value) });
   };
   const search = () => {
     conditions.page = 1;
@@ -81,7 +81,7 @@ export default function Filter() {
     setErr(error);
   };
   const selectCustomer = (customerId) => {
-    setConditions({ ...conditions, ['customer_id']: customerId});
+    setConditions({ ...conditions, ['customer_id']: customerId });
   };
   return (
     <Paper component="form" className={classes.root}>
@@ -95,7 +95,7 @@ export default function Filter() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Grid container>
-            <Grid xs={12} lg={3} sm={6} md={6} item>
+            <Grid xs={12} lg={2} sm={6} md={6} item>
               <div className="filter-container">
                 <FormGroup>
                   <span>Từ ngày</span>
@@ -127,7 +127,7 @@ export default function Filter() {
                 </FormGroup>
               </div>
             </Grid>
-            <Grid xs={12} lg={3} sm={6} md={6} item>
+            <Grid xs={12} lg={2} sm={6} md={6} item>
               <FormGroup className="form-group-filter">
                 <span>Mã vận đơn</span>
                 <Input
@@ -140,14 +140,28 @@ export default function Filter() {
                 ></Input>
               </FormGroup>
             </Grid>
+            <Grid xs={12} lg={2} sm={6} md={6} item>
+              <FormGroup className="form-group-filter">
+                <span>ID Đơn hàng</span>
+                <Input
+                  defaultValue=""
+                  placeholder="ID Đơn hàng"
+                  type="text"
+                  className="mt-10"
+                  onChange={(e) => handleChange(e)}
+                  name="order_id"
+                ></Input>
+              </FormGroup>
+            </Grid>
+
             {user.role === role.admin_role && (
-              <Grid xs={12} lg={3} sm={6} md={6} item className="pr-10">
+              <Grid xs={12} lg={2} sm={6} md={6} item className="pr-10">
                 <FilterInput
                   selectCustomer={(customerId) => selectCustomer(customerId)}
                 />
               </Grid>
             )}
-            <Grid xs={12} lg={3} sm={6} md={6} item>
+            <Grid xs={12} lg={2} sm={6} md={6} item>
               <FormGroup className="form-group-filter">
                 <span>Tình trạng</span>
                 <Input
